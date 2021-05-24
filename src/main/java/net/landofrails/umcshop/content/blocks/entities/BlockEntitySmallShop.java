@@ -19,19 +19,21 @@ public class BlockEntitySmallShop extends BlockEntity {
 	private OBJModel model;
 	private OBJRender renderer;
 
-	public BlockEntitySmallShop() {
-		Identifier id = new Identifier(UMCShop.MODID, "models/block/smallshopblock/smallshopblock.obj");
-		try {
-			model = new OBJModel(id, 0);
-			renderer = new OBJRender(model);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	@Override
 	public ItemStack onPick() {
 		return new ItemStack(CustomItems.ITEMSMALLSHOP, 1);
+	}
+
+	public void init() {
+		if (model == null) {
+			Identifier id = new Identifier(UMCShop.MODID, "models/block/smallshopblock/smallshopblock.obj");
+			try {
+				model = new OBJModel(id, 0);
+				renderer = new OBJRender(model);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public static StandardModel render(BlockEntitySmallShop entity) {
@@ -39,6 +41,8 @@ public class BlockEntitySmallShop extends BlockEntity {
 	}
 
 	private static void renderStuff(BlockEntitySmallShop entity, float partialTicks) {
+
+		entity.init();
 
 		float[] translation = new float[]{0f, 0f, 0f};
 		float[] rotation = new float[]{0f, 0f, 0f};

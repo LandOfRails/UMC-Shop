@@ -7,8 +7,10 @@ public class CustomBlocks {
 	
 	public static final BlockSmallShop BLOCKSMALLSHOP = new BlockSmallShop();
 	
-	public static void register() {
-		BlockRender.register(BLOCKSMALLSHOP, BlockEntitySmallShop::render, BlockEntitySmallShop.class);
+	public static void register(boolean client) {
+		if (client) {
+			BlockRender.register(BLOCKSMALLSHOP, BlockEntitySmallShop::render, BlockEntitySmallShop.class);
+		}
 	}
 	
 }

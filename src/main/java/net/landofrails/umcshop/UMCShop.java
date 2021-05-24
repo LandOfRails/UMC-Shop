@@ -22,9 +22,6 @@ public class UMCShop extends ModCore.Mod {
 			case CONSTRUCT :
 				break;
 			case INITIALIZE :
-				CustomTabs.register();
-				CustomItems.register();
-				CustomBlocks.register();
 				break;
 			case SETUP :
 				break;
@@ -44,6 +41,9 @@ public class UMCShop extends ModCore.Mod {
 			case CONSTRUCT :
 				break;
 			case INITIALIZE :
+				CustomTabs.register();
+				CustomItems.register(true);
+				CustomBlocks.register(true);
 				break;
 			case SETUP :
 				break;
@@ -63,6 +63,9 @@ public class UMCShop extends ModCore.Mod {
 			case CONSTRUCT :
 				break;
 			case INITIALIZE :
+				CustomTabs.register();
+				CustomItems.register(false);
+				CustomBlocks.register(false);
 				break;
 			case SETUP :
 				break;

@@ -34,19 +34,12 @@ public class ItemSmallShop extends CustomItem {
 
 	public ItemSmallShop() {
 		super(UMCShop.MODID, "smallshop");
-		try {
-			Identifier id = new Identifier(UMCShop.MODID, "models/item/smallshopblock.obj");
-			model = new OBJModel(id, 0);
-			renderer = new OBJRender(model);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	private void init() {
 		if (model == null) {
 			try {
-				Identifier id = new Identifier(UMCShop.MODID, "models/item/smallshopblock.obj");
+				Identifier id = new Identifier(UMCShop.MODID, "models/block/smallshopblock/smallshopblock.obj");
 				model = new OBJModel(id, 0);
 				renderer = new OBJRender(model);
 			} catch (Exception e) {

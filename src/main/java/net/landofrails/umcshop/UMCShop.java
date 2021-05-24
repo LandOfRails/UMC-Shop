@@ -20,11 +20,11 @@ public class UMCShop extends ModCore.Mod {
 	public void commonEvent(ModEvent event) {
 		switch (event) {
 			case CONSTRUCT :
+				break;
+			case INITIALIZE :
 				CustomTabs.register();
 				CustomItems.register();
 				CustomBlocks.register();
-				break;
-			case INITIALIZE :
 				break;
 			case SETUP :
 				break;

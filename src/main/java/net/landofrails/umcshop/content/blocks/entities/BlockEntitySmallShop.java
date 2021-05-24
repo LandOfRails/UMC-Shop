@@ -20,7 +20,7 @@ public class BlockEntitySmallShop extends BlockEntity {
 	private OBJRender renderer;
 
 	public BlockEntitySmallShop() {
-		Identifier id = new Identifier(UMCShop.MODID, "models/block/smallshopblock.obj");
+		Identifier id = new Identifier(UMCShop.MODID, "models/block/smallshopblock/smallshopblock.obj");
 		try {
 			model = new OBJModel(id, 0);
 			renderer = new OBJRender(model);
